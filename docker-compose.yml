@@ -1,0 +1,16 @@
+services:
+  web:
+    image: hmgchamidu/devops-practice-app:v1
+    ports:
+      - "8080:80"
+    restart: always
+
+  db:
+    image: mysql:8.0
+    container_name: my-mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+      MYSQL_DATABASE: devops_db
+    ports:
+      - "3306:3306"
+
